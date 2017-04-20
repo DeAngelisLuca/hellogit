@@ -6,7 +6,6 @@ public class CiaoMondo {
 		System.out.println("Test versione aggiornata solo locale");
 		System.out.println("Test versione aggiornata solo locale e remota");
 
-
 	}
 
 }
