@@ -28,11 +28,11 @@ public class LeggiParametri extends HttpServlet {
 		String host = (String)request.getRemoteHost();
 		String userAgent = request.getHeader("User-Agent");
 
-		//request.setAttribute("nome", nome);
-		//request.setAttribute("cognome", cognome);
-		//request.setAttribute("address", address);
-		//request.setAttribute("host", host);
-		//request.setAttribute("userAgent", userAgent);
+		request.setAttribute("nome", nome);
+		request.setAttribute("cognome", cognome);
+		request.setAttribute("address", address);
+		request.setAttribute("host", host);
+		request.setAttribute("userAgent", userAgent);
 
 		// inoltro
 

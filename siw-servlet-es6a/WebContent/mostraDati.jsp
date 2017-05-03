@@ -7,18 +7,13 @@
 <title>mostraDati</title>
 </head>
 <body>
-<%String nome = request.getParameter("nome").toUpperCase(); %>
-<%String cognome = request.getParameter("cognome").toUpperCase(); %>
-<%String address = request.getParameter("address"); %>
-<%String host = request.getParameter("host"); %>
-<%String userAgent = request.getParameter("userAgent"); %>
+Nome:<%out.println(request.getAttribute("nome"));%>
+Cognome:<%out.println(request.getAttribute("cognome"));%>
+Indirizzo:<%out.println(request.getAttribute("address"));%>
+Host:<%out.println(request.getAttribute("host"));%>
+UserAgent:<%out.println(request.getAttribute("userAgent"));%>
 
 
-NOME:<% out.println(nome);%>
-COGNOME:<% out.println(cognome);%>
-ADDRESS:<% out.println(address);%>
-HOST:<% out.println(host);%>
-USER:<% out.println(userAgent);%>
 
 </body>
 </html>
