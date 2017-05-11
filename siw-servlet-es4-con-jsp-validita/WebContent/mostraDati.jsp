@@ -7,9 +7,8 @@
 <title>Mostra Dati</title>
 </head>
 <body>
-Hai inserito:
-<%out.println(request.getAttribute("nome")); %>,
-<%out.println(request.getAttribute("cognome")); %>
+Hai inserito: ${nome} ${cognome}
+
 
 </body>
 </html>
