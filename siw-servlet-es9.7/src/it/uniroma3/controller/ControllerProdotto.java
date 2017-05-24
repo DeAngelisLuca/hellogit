@@ -27,12 +27,21 @@ public class ControllerProdotto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String nextPage;
+		if(request.getParameter("command")!=null){
+		long id= Long.parseLong(request.getParameter("id"));
+		ProductService pv= new ProductService();
+		Prodotto p= pv.getOneProduct(id);//NO
+		pv.delete(p);						   // param id
+		request.setAttribute("prodotti",pv.getProdotti());
+		nextPage="/index.jsp";
+		}
+		else{
 		
 		Prodotto prodotto = new Prodotto();
 		request.setAttribute("prodotto", prodotto);
 		
 		ProductValidator validator = new ProductValidator();
-
+		
 		if(validator.validate(request)) {
 			ProductService service = new ProductService();
 			service.inserisciProdotto(prodotto);
@@ -41,6 +50,7 @@ public class ControllerProdotto extends HttpServlet {
 		else
 			nextPage = "/index.jsp";
 
+		}
 		ServletContext application  = getServletContext();
 		RequestDispatcher rd = application.getRequestDispatcher(nextPage);
 		rd.forward(request, response);

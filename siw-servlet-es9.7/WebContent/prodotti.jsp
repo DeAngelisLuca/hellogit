@@ -11,7 +11,7 @@
 			<li><a href="prodotto?id=${prodotto.id}"> ${prodotto.nome} </a>
 			<form action="prodotto" method="post">
 			 	<input type="hidden" value="${prodotto.id}" name="id"/>
-			    <input type="button" value="cancella" name="comand"/>
+			    <input type="submit" value="cancella" name="command"/>
 			</form>
 			</li>
 		</c:forEach>
